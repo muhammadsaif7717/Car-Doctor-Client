@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
-import { useContext } from 'react';
-import { AuthContext } from '../../providers/AuthProvider';
+// import { useContext } from 'react';
+// import { AuthContext } from '../../providers/AuthProvider';
 import axios from 'axios';
+import useAuh from '../../Hooks/useAuh';
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    // const { signIn } = useContext(AuthContext);
+    const { signIn } = useAuh();
 
     const handleLogin = event => {
         event.preventDefault();
