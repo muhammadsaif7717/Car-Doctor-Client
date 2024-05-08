@@ -30,26 +30,26 @@ const AuthProvider = ({ children }) => {
             const userEmail = currentUser?.email || user?.email;
             const loggedUser = { email: userEmail }
             setUser(currentUser);
-            console.log('current user', currentUser);
+            // console.log('current user', currentUser);
             setLoading(false);
             // if user exist then issue atoken
             if (currentUser) {
                 axios.post('https://car-doctor-server-psi-liard.vercel.app/jwt', loggedUser, { withCredentials: true })
-                    .then(res => {
-                        console.log('Token response', res.data)
+                    .then(() => {
+                        // console.log('Token response', res.data)
                     })
             }
             else {
                 axios.post('https://car-doctor-server-psi-liard.vercel.app/logout', loggedUser, { withCredentials: true })
-                    .then(res => {
-                        console.log(res.data)
+                    .then(() => {
+                        // console.log(res.data)
                     })
             }
         });
         return () => {
             return unsubscribe();
         }
-    }, [])
+    }, [user?.email])
 
     const authInfo = {
         user,

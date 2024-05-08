@@ -33,7 +33,7 @@ const Bookings = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     if (data.deletedCount > 0) {
                         alert('deleted successful');
                         const remaining = bookings.filter(booking => booking._id !== id);
@@ -53,7 +53,7 @@ const Bookings = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     // update state
                     const remaining = bookings.filter(booking => booking._id !== id);

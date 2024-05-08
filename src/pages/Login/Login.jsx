@@ -15,11 +15,11 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        // console.log(email, password)
         signIn(email, password)
-            .then(result => {
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
+            .then(() => {
+                // const loggedInUser = result.user;
+                // console.log(loggedInUser);
                 const user = { email }
                 axios.post('https://car-doctor-server-psi-liard.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
