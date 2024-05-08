@@ -54,7 +54,6 @@ const SignUp = () => {
           showConfirmButton: false,
           timer: 1500
         });
-
         //update profile
         updateUserProfile(name, photo)
           .then(() => {
