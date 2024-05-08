@@ -15,7 +15,7 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password)
-        const user={name,email,password}
+        const user = { name, email, password }
 
 
         createUser(email, password)
@@ -23,10 +23,10 @@ const SignUp = () => {
                 const newUser = result.user;
                 console.log('created user', newUser)
                 //post user to database
-                axios.post('http://localhost:5000/users', user)
-                .then(res => {
-                  console.log(res.data)
-                })
+                axios.post('https://car-doctor-server-psi-liard.vercel.app/users', user)
+                    .then(res => {
+                        console.log(res.data)
+                    })
             })
             .catch(error => console.log(error))
 
